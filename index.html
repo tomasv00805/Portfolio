@@ -7,54 +7,66 @@
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-900 text-white font-sans">
-  <!-- Container -->
-  <div class="max-w-screen-lg mx-auto px-4 md:w-3/4">
-    <!-- Header -->
+  <div class="max-w-screen-lg mx-auto px-4">
     <header class="flex items-center py-6 border-b border-gray-800">
-      <img class="w-24 h-24 rounded-full" src="your-profile-pic.jpg" alt="Profile Picture">
-      <div class="ml-4">
-        <h1 class="text-xl font-bold">Tomas Villalba Buontempo</h1>
-        <p class="text-gray-400 mt-1">Soy  estudiante de la carrera de inegnieria en sistema, Soy apacionado en la creacion de nuevas soluciones, invencion de nuevos productos y participar en proyectos de productos inovadores. <br>Soy una persona que le gusta aprender cosas nuevas y meterse en nuevos desafios, siempre me interesa un nuevo reto. Soy de adaptarme rapido, soy responsable, proactivo, con capacidades de ser lider, concidero que tengo un buen tacto con las personal al hablar y puedo tener una buena realcion con el alrededor. Me interesa seguir ganando experiencia, me gusta lo referido a analisis funcional, planificacion y gestion de proyectos y tambien lo realcionado con las IoT <br>Durante mi estudios practique desarrollo web tanto front end como back end, tengo un poco de experiencias en base de datos y tambien gestione un proyecto de otro año de mi carrera.</p>      </div>
+      <img class="rounded-full w-36 h-36 object-contain" src="Mifoto.png" alt="Profile Picture">
+      <div class="ml-6">
+        <h1 class="text-2xl font-bold">Tomas Villalba Buontempo</h1>
+        <p class="text-gray-400 mt-2 text-sm leading-relaxed">Estudiante de ingenieria en sistema de la informacion <br>5to año de la carrera</p>
       </div>
     </header>
 
-    <!-- Navigation -->
     <nav class="flex justify-center space-x-8 py-4 border-b border-gray-800">
-      <button id="btn-posts" class="text-gray-400 hover:text-white">Publicaciones</button>
-      <button id="btn-reels" class="text-gray-400 hover:text-white">Reels</button>
+      <button id="btn-posts" class="text-gray-400 hover:text-white">Proyectos</button>
+      <button id="btn-reels" class="text-gray-400 hover:text-white">Sobre mi</button>
+      <button id="btn-projects" class="text-gray-400 hover:text-white">Habilidades</button>
     </nav>
 
-    <!-- Main Content -->
     <main class="py-8">
-      <!-- Posts Section -->
-      <section id="posts-section" class="grid grid-cols-3 gap-4">
-        <div class="relative group cursor-pointer" onclick="expandImage('skills.jpg', 'Descripción de habilidades')">
-          <img src="skills.jpg" alt="Habilidades" class="w-full h-72 object-cover">
+      <section id="posts-section" class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        <div class="w-full h-80 relative cursor-pointer" onclick="openModal('LOGO_SinFondo.png', 'Aquí se presentan mis habilidades y conocimientos en distintas áreas.')">
+          <img src="LOGO_SinFondo.png" alt="Habilidades" class="w-full h-full object-contain rounded-lg">
         </div>
 
-        <div class="relative group cursor-pointer" onclick="expandImage('experience.jpg', 'Descripción de experiencias')">
-          <img src="experience.jpg" alt="Experiencias" class="w-full h-72 object-cover">
+        <div class="w-full h-80 relative cursor-pointer" onclick="openModal('fonocoach.png', 'Experiencia adquirida en proyectos y trabajos anteriores.')">
+          <img src="fonocoach.png" alt="Experiencias" class="w-full h-full object-cover rounded-lg">
         </div>
 
-        <div class="relative group cursor-pointer" onclick="expandImage('contact.jpg', 'Descripción de contacto')">
-          <img src="contact.jpg" alt="Contacto" class="w-full h-72 object-cover">
+        <div class="w-full h-80 relative cursor-pointer" onclick="openModal('emailmanager.png', 'Información de contacto para colaboraciones y oportunidades.')">
+          <img src="emailmanager.png" alt="Contacto" class="w-full h-full object-cover rounded-lg">
         </div>
       </section>
 
-      <!-- Reels Section (hidden by default) -->
-      <section id="reels-section" class="grid grid-cols-3 gap-4 hidden">
-        <div class="relative group cursor-pointer" onclick="expandImage('reel1.jpg', 'Descripción del reel 1')">
-          <img src="reel1.jpg" alt="Reel 1" class="w-full h-72 object-cover">
+      <section id="reels-section" class="grid grid-cols-1 md:grid-cols-3 gap-6 hidden">
+        <div class="w-full h-80 relative cursor-pointer" onclick="openModal('curriculum.png', '<a href=\'https://www.canva.com/design/DAGilQOf2UI/QUbhSAi-3YdT-JvsQom2OA/edit?utm_content=DAGilQOf2UI&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton\' target=\'_blank\' class=\'text-blue-400 underline\'>Enlace curriculum</a>')">
+          <img src="curriculum.png" alt="Reel 1" class="w-full h-full object-cover rounded-lg">
         </div>
-        <div class="relative group cursor-pointer" onclick="expandImage('reel2.jpg', 'Descripción del reel 2')">
-          <img src="reel2.jpg" alt="Reel 2" class="w-full h-72 object-cover">
+        <div class="w-full h-80 relative cursor-pointer" onclick="openModal('aboutme.png', 'Soy  estudiante de la carrera de inegnieria en sistema, Soy apacionado en la creacion de nuevas soluciones, invencion de nuevos productos y participar en proyectos de productos inovadores. Soy una persona que le gusta aprender cosas nuevas y meterse en nuevos desafios, siempre me interesa un nuevo reto. Soy de adaptarme rapido, soy responsable, proactivo, con capacidades de ser lider, concidero que tengo un buen tacto con las personal al hablar y puedo tener una buena realcion con el alrededor. Me interesa seguir ganando experiencia, me gusta lo referido a analisis funcional, planificacion y gestion de proyectos y tambien lo realcionado con las IoT <br>Durante mi estudios practique desarrollo web tanto front end como back end, tengo un poco de experiencias en base de datos y tambien gestione un proyecto de otro año de mi carrera.')">
+          <img src="aboutme.png" alt="Reel 2" class="w-full h-full object-cover rounded-lg">
+        </div>
+        <div class="w-full h-80 relative cursor-pointer" onclick="openModal('Contactme.png', 'email: tomasv00805@gmail.com\nTelefono: +54 3794634403\n Ubicacion: Corrientes, Corrientes, Argentina')">
+          <img src="Contactme.png" alt="Reel 2" class="w-full h-full object-cover rounded-lg">
+        </div>
+      </section>
+
+      <section id="projects-section" class="grid grid-cols-1 md:grid-cols-3 gap-6 hidden">
+        <div class="w-full h-80 relative cursor-pointer" onclick="openModal('project1.jpg', 'Descripción detallada del Proyecto 1.')">
+          <img src="trello.png" alt="Proyecto 1" class="w-full h-full object-contain rounded-lg">
+        </div>
+        <div class="w-full h-80 relative cursor-pointer" onclick="openModal('project2.jpg', 'Descripción detallada del Proyecto 2.')">
+          <img src="js.png" alt="Proyecto 2" class="w-full h-full object-cover rounded-lg">
+        </div>
+        <div class="w-full h-80 relative cursor-pointer" onclick="openModal('project2.jpg', 'Descripción detallada del Proyecto 2.')">
+          <img src="nodejs.png" alt="Proyecto 2" class="w-full h-full object-contain rounded-lg">
+        </div>
+        <div class="w-full h-80 relative cursor-pointer" onclick="openModal('project2.jpg', 'Descripción detallada del Proyecto 2.')">
+          <img src="css.png" alt="Proyecto 2" class="w-full h-full object-contain rounded-lg">
         </div>
       </section>
     </main>
 
-    <!-- Expanded View Modal -->
     <div id="modal" class="fixed inset-0 bg-black bg-opacity-80 flex items-center justify-center hidden">
-      <div class="bg-gray-800 rounded-lg shadow-lg w-11/12 md:w-3/4 lg:w-2/3 max-h-full overflow-auto">
+      <div class="bg-gray-800 rounded-lg shadow-lg w-11/12 md:w-3/4 lg:w-2/3 max-h-full overflow-auto relative">
         <button class="absolute top-2 right-2 text-white text-2xl" onclick="closeModal()">&times;</button>
         <div class="flex flex-col md:flex-row">
           <div class="flex-shrink-0 md:w-1/2">
@@ -67,35 +79,35 @@
       </div>
     </div>
 
-    <!-- Footer -->
-    <footer class="text-center py-6 border-t border-gray-800">
-      <p class="text-gray-500">© 2025 Your Name. All rights reserved.</p>
-    </footer>
+    
+    <script>
+      document.getElementById('btn-posts').addEventListener('click', () => {
+        document.getElementById('posts-section').classList.remove('hidden');
+        document.getElementById('reels-section').classList.add('hidden');
+        document.getElementById('projects-section').classList.add('hidden');
+      });
+
+      document.getElementById('btn-reels').addEventListener('click', () => {
+        document.getElementById('posts-section').classList.add('hidden');
+        document.getElementById('reels-section').classList.remove('hidden');
+        document.getElementById('projects-section').classList.add('hidden');
+      });
+
+      document.getElementById('btn-projects').addEventListener('click', () => {
+        document.getElementById('posts-section').classList.add('hidden');
+        document.getElementById('reels-section').classList.add('hidden');
+        document.getElementById('projects-section').classList.remove('hidden');
+      });
+      function openModal(src, description) {
+        document.getElementById('modal').classList.remove('hidden');
+        document.getElementById('modal-image').src = src;
+        document.getElementById('modal-description').innerHTML = description.replace(/\n/g, "<br>");
+      }
+    
+      function closeModal() {
+        document.getElementById('modal').classList.add('hidden');
+      }
+    </script>
   </div>
-
-  <script>
-    // Toggle sections
-    document.getElementById('btn-posts').addEventListener('click', () => {
-      document.getElementById('posts-section').classList.remove('hidden');
-      document.getElementById('reels-section').classList.add('hidden');
-    });
-
-    document.getElementById('btn-reels').addEventListener('click', () => {
-      document.getElementById('posts-section').classList.add('hidden');
-      document.getElementById('reels-section').classList.remove('hidden');
-    });
-
-    // Expand image
-    function expandImage(src, description) {
-      document.getElementById('modal').classList.remove('hidden');
-      document.getElementById('modal-image').src = src;
-      document.getElementById('modal-description').textContent = description;
-    }
-
-    // Close modal
-    function closeModal() {
-      document.getElementById('modal').classList.add('hidden');
-    }
-  </script>
 </body>
 </html>
